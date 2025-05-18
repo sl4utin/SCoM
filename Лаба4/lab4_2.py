@@ -53,6 +53,10 @@ dt = t_values[1]-t_values[0]
 integral_error = sum(error**2 * dt for error in error_values)
 print(f"Интеграл квадрата ошибки: {integral_error}")
 
+mse = sum(error**2 for error in error_values) / len(error_values)
+rmse = sqrt(mse)
+print(f"Среднеквадратичное отклонение (RMSE): {rmse}")
+
 plt.figure(figsize=(10, 6))
 plt.plot(t_values, x_values, label="x(t)", linewidth=2)
 plt.plot(t_values, x2_values, label="x*(t)", linewidth=2)

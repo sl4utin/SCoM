@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 from math import *
 
 def y1(t):
@@ -99,3 +100,17 @@ print(cos)
 
 print('MS1')
 print(ms)
+
+
+# Графики функций y1, y2, y3
+plt.plot(t_values, [y1(t) for t in t_values], label='y1(t) = sin(2πt)')
+plt.plot(t_values, [y2(t) for t in t_values], label='y2(t) = sin(2πt) + t')
+plt.plot(t_values, [y3(t) for t in t_values], label='y3(t) = sin(πt)')
+plt.title('Исходные функции')
+plt.xlabel('t')
+plt.ylabel('y(t)')
+plt.grid(True)
+plt.legend()
+
+plt.tight_layout()
+plt.show()
